@@ -9,9 +9,10 @@ def copyFiles(readFile, writeFile):
 	while i < total_lines:
 		writeFile.write(lines_list[i])
 		i +=2;
+	print("data of alternate lines copied successfully :-)")
 
 
-def main() :
+def main():
 	no_of_files = len(sys.argv)
 	more = True;
 
@@ -19,8 +20,8 @@ def main() :
 		if(no_of_files == 3 ):
 			if(os.path.exists(sys.argv[1])):
 				if sys.argv[1] == sys.argv[2]:
-					raise NameError
-				else :
+					raise NameError("abc")
+				else:
 					file1 = open(sys.argv[1], "r")
 					file2 = open(sys.argv[2], "w")
 					print("reading from file :", sys.argv[1] )
@@ -29,19 +30,19 @@ def main() :
 					copyFiles(file1, file2)
 					file1.close()
 					file2.close()
-
-			else :
+			else:
 				raise Exception
-		else :
+		else:
 			print("Invalid number of arguments")
+	except NameError as e:
+		print(e, "read and write files cannot be same ")
 	except Exception as e:
 		print("Read file doesn't exists.")
-	except NameError as e:
-		print(e, " read and write files cannot be same "
 	
 
 	# file1.close()
 	# file2.close()
 
-
 main()
+
+
