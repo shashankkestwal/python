@@ -8,7 +8,7 @@ def input_list():
 		exit()
 	print("Enter the names of the students :")
 	for i in range(size):
-		ele = input("Student name :")
+		ele = input("Student {} name :".format(i+1))
 		li.append(ele)
 	return li
 
@@ -23,14 +23,13 @@ def binary_search(li, search_element):
 	last = len(li)
 	new_sorted_list = bubble_sort(li)
 	while last > start:
-		mid = (start + last) / 2
-		mid = round(mid)
+		mid = (start + last) // 2
 		if li[mid] == search_element :
 	 		return True
 		elif li[mid] > search_element :
-	 		last = mid
+	 		last = mid - 1 
 		elif li[mid] < search_element :
-	 		start =  mid
+	 		start =  mid + 1
 	return False
 
 def bubble_sort(li):
@@ -90,7 +89,7 @@ def main():
 			if binary_search(input_student_l, search_student):
 				print("Student named ",search_student, " found in the list !")
 			else:
-				print("No student was found with name ", students_name)
+				print("No student was found with name ", search_student)
 		elif choice == 'c':
 			sorted_student_list = bubble_sort(input_student_l)
 			print("sorted student list: ", sorted_student_list)

@@ -10,12 +10,16 @@ def fibonacci_series(n):
         a = x
     return series
 
+def factorial(val):
+    Factorial = 1
+    for i in range(val, 1, -1):
+        Factorial = Factorial * i
+    return Factorial
+
 #method to return the result list
 def result(val):
-    factorial = 1
-    for i in range(val, 1, -1):
-        factorial = factorial * i
-    result_list = [val, factorial]
+    Factorial = factorial(val)
+    result_list = [val, Factorial]
     return result_list
 
 def main():

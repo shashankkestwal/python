@@ -13,31 +13,38 @@ class student:
 		average_marks = total_marks // len(self.__marks_list)
 		return average_marks
 
+	def __del__(self):
+		print("student object destructed.")
 
 def input_marks():
 	marks_list = list()
 	for i in range(3):
 		print("Enter marks in subject ",i+1," : ", end="" )
-		marks = int(input())
-		marks_list.append(marks)
+		marks = input()
+		if marks.isnumeric():
+			marks = int(marks)
+			marks_list.append(marks)
+		else:
+			i-=1
 	return marks_list
 
 def main():
-
+	choice ='y'
 	while True:
-		print("do you want to continue ?(press n/N to exit ) ", end = "")
-		choice = input()
 		if choice !="N" and choice != "n" :
 			
-			name = input("Enter your name : ")
+			name = input("Enter student name : ")
 			student_marks_list = input_marks()
 			s = student(name, student_marks_list)
 			if s.student_average > student.max_average:
 				student.max_average = s.student_average	
+				del s
+
 		else:
 			print("Maximum average marks by any student is :",student.max_average)
-			exit()
-
+			break
+		print("Do you want to continue adding students ?(press n/N to exit ) ", end = "")
+		choice = input()
 
 if __name__ == '__main__':
 	main()

@@ -1,4 +1,4 @@
-import Factorial
+from Practical3 import factorial
 import math
 def series(x,n):
     sum = 0
@@ -6,10 +6,10 @@ def series(x,n):
     i = 0
     while i<=n:
         if (i/2)%2 == 0:
-            sum += math.pow(x,i)/Factorial.factorial(i)
+            sum += math.pow(x,i)/factorial(i)
             i += 2
         else:
-            sum -= math.pow(x,i)/Factorial.factorial(i)
+            sum -= math.pow(x,i)/factorial(i)
             i += 2
     return sum
 

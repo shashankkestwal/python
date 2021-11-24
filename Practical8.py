@@ -112,7 +112,11 @@ def main():
 
 		elif choice == 'c':
 			str_len, largest_str = largest_string(l1)
-			print("Largest string of length ",str_len,"in the list is :",largest_str)
+			if str_len == None:
+				print("No string in the list ")
+				pass
+			else:
+				print("Largest string of length ",str_len,"in the list is :",largest_str)
 
 		elif choice == 'd':
 			reversed_list = reverse_list(l1)
@@ -141,12 +145,12 @@ def main():
 			print("The elements common in both the list are :", common_element_list)
 
 		elif choice == 'i':
-			print(exit)
+			print("exit")
+			exit()
 		else :
 			print("Invalid input")
 			exit()
 
-		
-
 if __name__ == '__main__':
 	main()
+

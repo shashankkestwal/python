@@ -70,25 +70,45 @@ def plot_polynomial(coffecient_list):
     plt.show()
 
 def exponential_curve():
+    base = int(input("Enter the base value for the exponential curve : "))
     polynomial_val = []
     x_values = []
     for i in range(10):
-        value = 2**i
+        value = base**i
         x_values.append(i)
         polynomial_val.append(value)
 
     plt.plot(x_values, polynomial_val)
     plt.xlabel('x')
-    plt.ylabel('Polynomial value')
+    plt.ylabel(str(base)+"^x")
     plt.title("Exponential curve ")
     plt.show()
 
 
 def main():
-    # sin_curve()
-    # cos_curve()
-    # coffecient_list = input_function()
-    # plot_polynomial(coffecient_list)
-    exponential_curve()
+
+    while True:
+        print("1-show sine curve")
+        print("2-show cosine curve")
+        print("3-show polynomial curve")
+        print("4-show exponential_curve curve")
+        print("5-exit the program")
+        choice = int(input("Enter your choice :"))
+        if choice == 1:
+            sin_curve()
+        elif choice == 2:
+            cos_curve();
+        elif choice == 3:
+            coffecient_list = input_function()
+            plot_polynomial(coffecient_list)
+        elif choice == 4:
+            exponential_curve()
+        elif choice == 5:
+            print("Exiting the program")
+            exit();
+        else:
+            print("Invalid input")
+            exit()
+
 main()
 

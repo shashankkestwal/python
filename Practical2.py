@@ -16,9 +16,9 @@ def salesman_details(sales):
     return salesman_status
 
 def main():
-    print("Welcome salesman ")
     choice = ''
     while choice != 'n' and choice !='N':
+        print("\nWelcome salesman ")
         sales=input("Enter your sales for the week: ")
         if sales.isnumeric():
             sales = int(sales)
@@ -34,7 +34,7 @@ def main():
             print(salesman_info)
         else:
             print("Incorrect input")
-        choice = input("Do you want to continue :")
+        choice = input("Do you want to continue :(n/N to exit)")
 
 
 if __name__ == '__main__':
